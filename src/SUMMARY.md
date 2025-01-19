@@ -6,5 +6,5 @@
 
 # Ciência de Dados
 
-- [Estatistica]()
+- [Estatisticaaa]()
 
