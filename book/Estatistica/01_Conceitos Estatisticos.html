@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Estatistica - Minha Documentação Pessoal</title>
+        <title>Estatistica - Ciência de Dados</title>
 
 
         <!-- Custom HTML head -->
@@ -120,7 +120,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Minha Documentação Pessoal</h1>
+                    <h1 class="menu-title">Ciência de Dados</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -152,85 +152,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <ul>
-<li><a href="#p-valor">P Valor</a>
-<ul>
-<li><a href="#o-que-%C3%A9-p-valor">O que é P VALOR?</a></li>
-<li><a href="#hip%C3%B3teses-estat%C3%ADsticas">Hipóteses Estatísticas</a></li>
-<li><a href="#n%C3%ADvel-de-signific%C3%A2ncia-e-valor-de-p">Nível de Significância e Valor de P</a></li>
-<li><a href="#estatisticamente-significativo">Estatisticamente Significativo?</a></li>
-<li><a href="#o-que-significa-o-valor-de-p">O que Significa o Valor de P?</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="p-valor"><a class="header" href="#p-valor">P Valor</a></h1>
-<h2 id="o-que-é-p-valor"><a class="header" href="#o-que-é-p-valor">O que é P VALOR?</a></h2>
-<p>O valor de p representa a <strong>probabilidade de a diferença detectada entre os grupos analisados ter ocorrido ao acaso.</strong></p>
-<p>Então,</p>
-<p>– Um <strong>pequeno valor de p</strong> (p ≤ 0,05, ou seja, probabilidade menor ou igual a 5%):
-indica que há uma pequena probabilidade de que a diferença observada entre os grupos seja ao acaso, então, você considera que <strong><code>há diferença significativa</code></strong> entre os grupos.</p>
-<p>– Um <strong>grande valor de p</strong> (p &gt; 0,05, ou seja, probabilidade maior que 5%):
-indica que há uma grande probabilidade de que a diferença observada entre os grupos seja ao acaso, então, você considera que <strong><code>não há diferença significativa</code></strong> entre os grupos.</p>
-<p>Na explicação acima, usamos <strong>“diferença entre os grupos”</strong> como exemplo, que se aplica a análises como <strong>teste t</strong> e <strong>Anova</strong>.</p>
-<p>Para testes como correlação de Pearson e regressão linear, passaríamos a dizer <strong>“relação entre as variáveis”</strong>.</p>
-<p><strong>Referência:</strong> https://estatisticafacil.org/2020/10/06/valor_de_p/</p>
-<blockquote>
-<h3 id="atente-se-para-a-informação-a-seguir"><a class="header" href="#atente-se-para-a-informação-a-seguir">Atente-se para a informação a seguir:</a></h3>
-</blockquote>
-<blockquote>
-<p>As definições, entendimentos e explicações que utilizamos aqui, são os mais gerais e amplamente utilizadas em disciplinas básicas de estatística ou bioestatística e livros texto.</p>
-</blockquote>
-<blockquote>
-<p>Sendo assim, nestes moldes, de forma geral, o entendimento dos significados se torna mais fácil e lógico para quem não é ligado diretamente com a área de exatas.</p>
-</blockquote>
-<blockquote>
-<p>Este entendimento, no entanto, vem sendo criticado por alguns estatísticos e, por conta disto, a <em>Associação Americana de Estatística</em> publicou um editorial sobre a <strong><code>“significância estatística e o valor de p”</code></strong>, com aspectos um pouco diferentes dos retratados aqui.</p>
-</blockquote>
-<blockquote>
-<p>Abaixo, uma definição mais precisa, mas ao mesmo tempo menos intuitiva.</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><strong>O valor de p representa a probabilidade de obtermos um resultado igual (ou mais extremo) ao obtido a partir dos nossos dados, assumindo que a hipótese nula é verdadeira.</strong></p>
-</blockquote>
-</blockquote>
-<p>Essa definição será discutida nos tópicos abaixo</p>
-<h2 id="hipóteses-estatísticas"><a class="header" href="#hipóteses-estatísticas">Hipóteses Estatísticas</a></h2>
-<p>Quando fazemos um <strong>teste inferencial</strong> de hipóteses — como qui-quadrado, teste t, anova, correlação, regressão, etc — temos basicamente duas hipóteses:</p>
-<ul>
-<li>
-<p><strong>HIPÓTESE nula (H0):</strong> A padrão, mais simples, de que não há ‘diferença entre os grupos’ ou não há ‘relação entre as variáveis’.</p>
-</li>
-<li>
-<p><strong>HIPÓTESE alternativa (H1):</strong> Estado alternativo, complementar a H0, de que há ‘diferenças entre grupos’ ou há ‘relação entre as variáveis’.</p>
-</li>
-</ul>
-<h2 id="nível-de-significância-e-valor-de-p"><a class="header" href="#nível-de-significância-e-valor-de-p">Nível de Significância e Valor de P</a></h2>
-<p>O <strong>objetivo</strong> básico de todo e qualquer teste de hipóteses é definir se rejeitaremos ou não a hipótese nula (H0) — e essa definição dependerá de dois fatores fundamentais:</p>
-<p><strong>1. NÍVEL DE SIGNIFICÂNCIA (<em>α</em>)</strong></p>
-<p>Representa um valor de corte, um critério que definimos para rejeitar H0 ou não. A definição de seu valor — normalmente 1% ou 5% — deve ser feita anteriormente ao teste.</p>
-<p><strong>2. VALOR DE P (p)</strong></p>
-<p>O valor de p representa uma probabilidade, e esse valor será obtido sempre que executarmos um teste inferencial de hipóteses.</p>
-<h2 id="estatisticamente-significativo"><a class="header" href="#estatisticamente-significativo">Estatisticamente Significativo?</a></h2>
-<p>Ao executar nossa análise e obtermos o valor de p, o próximo passo será compará-lo com o nível de significância (<strong>α</strong>) que definimos anteriormente.</p>
-<p>Como exemplo, considere que definimos um nível de significância <strong>(α) de 0,05 (ou 5%)</strong>, teríamos então duas possibilidades ao compararmos esse α com nosso valor de p obtido no teste:</p>
-<ol>
-<li>
-<p>Quando o valor de p é menor ou igual ao nível de significância α <strong><code>(p ≤ 0,05)</code></strong>, devemos então <strong><code>rejeitar</code></strong> a <strong><code>hipótese nula (H0)</code></strong>. Aqui dizemos que nosso teste foi <strong><code>estatisticamente significativo</code></strong>.</p>
-</li>
-<li>
-<p>Quando o valor de p é maior que o nível de significância α <strong><code>(p &gt; 0,05)</code></strong>, devemos então <strong><code>não rejeitar</code></strong> a <strong><code>hipótese nula (H0)</code></strong>. Aqui dizemos que nosso teste <strong><code>não foi estatisticamente significativo</code></strong>.</p>
-</li>
-</ol>
-<h2 id="o-que-significa-o-valor-de-p"><a class="header" href="#o-que-significa-o-valor-de-p">O que Significa o Valor de P?</a></h2>
-<p>Em termos técnicos o valor de p pode ser definido como:</p>
-<blockquote>
-<p>A probabilidade de obtermos um resultado igual (ou mais  extremo)
-ao obtido a partir dos nossos dados, assumindo que a hipótese nula é verdadeira.</p>
-</blockquote>
-<p>Se meu teste retornou, por exemplo, p = 2%, o que isso significa?</p>
-<p>Se considerarmos H0 verdadeira, a probabilidade de obtermos resultados iguais (ou mais extremos) que o nosso, será de apenas 2%. Como foi menor que o α = 5%, rejeitamos H0. Veja a seguir.</p>
-<p><strong>Referência:</strong> https://estatisticafacil.org/2022/02/18/valor_de_p_retorno/</p>
+                        <h1 id="estatistica"><a class="header" href="#estatistica">Estatistica</a></h1>
 
                     </main>
 
@@ -240,6 +162,9 @@ ao obtido a partir dos nossos dados, assumindo que a hipótese nula é verdadeir
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next prefetch" href="../Estatistica/Testes_Hipoteses/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -251,6 +176,9 @@ ao obtido a partir dos nossos dados, assumindo que a hipótese nula é verdadeir
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next prefetch" href="../Estatistica/Testes_Hipoteses/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

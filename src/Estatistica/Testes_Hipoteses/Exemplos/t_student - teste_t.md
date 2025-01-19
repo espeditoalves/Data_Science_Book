@@ -132,5 +132,5 @@ Com base nos cálculos, **`podemos rejeitar a hipótese nula`** e concluir que e
 
 ---
 
-Calculo usando Python: []()
+Calculo usando Python: [Jupyer-Notebook](t_student%20-%20teste_t.ipynb)
 
