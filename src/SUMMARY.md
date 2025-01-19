@@ -6,5 +6,5 @@
 
 # Ciência de Dados
 
-- [Estatisticaaa]()
+- [Estatistica](./Estatistica/01_Conceitos%20Estatisticos.md)
 

@@ -1,0 +1,50 @@
+## Funções Built-in do Python
+
+O Python possui várias funções built-in que estão sempre disponíveis para uso. Aqui estão algumas delas em ordem alfabética:
+
+- `abs(x)`: Retorna o valor absoluto de um número (inteiro ou ponto flutuante).
+- `all(iterable)`: Retorna True se todos os elementos do iterável forem verdadeiros (ou se o iterável estiver vazio).
+- `any(iterable)`: Retorna True se qualquer elemento do iterável for verdadeiro.
+- `ascii(object)`: Retorna uma representação imprimível de um objeto, escapando caracteres não-ASCII.
+- `bin(x)`: Converte um número inteiro para uma string de binários prefixada com “0b”.
+- `bool(x)`: Retorna um valor booleano (True ou False).
+- `bytearray(source[, encoding[, errors]])`: Retorna um novo vetor de bytes mutável.
+- `bytes([source[, encoding[, errors]]])`: Retorna um objeto de bytes imutável.
+- `callable(object)`: Verifica se o objeto é chamável (pode ser chamado como uma função).
+- `chr(i)`: Retorna uma string representando um caractere Unicode cujo código é i.
+- `complex(real[, imag])`: Retorna um número complexo.
+- `delattr(object, name)`: Remove um atributo de um objeto.
+- `dict([iterable])`: Retorna um dicionário.
+- `divmod(a, b)`: Retorna o quociente e o resto da divisão de a por b.
+- `enumerate(iterable, start=0)`: Retorna um objeto enumerado (pares índice-valor).
+- `filter(function, iterable)`: Filtra elementos do iterável com base em uma função.
+- `float(x)`: Converte um número ou string para um ponto flutuante.
+- `format(value[, format_spec])`: Formata um valor de acordo com a especificação de formato.
+- `frozenset([iterable])`: Retorna um conjunto imutável.
+- `getattr(object, name[, default])`: Retorna o valor de um atributo de um objeto.
+- `globals()`: Retorna um dicionário com as variáveis globais.
+- `hasattr(object, name)`: Verifica se um objeto tem um atributo.
+- `hash(object)`: Retorna o valor hash de um objeto.
+- `hex(x)`: Converte um número inteiro para uma string hexadecimal.
+- `id(object)`: Retorna o identificador único de um objeto.
+- `input([prompt])`: Lê uma linha da entrada padrão.
+- `int(x[, base])`: Converte um número ou string para um inteiro.
+- `isinstance(object, classinfo)`: Verifica se um objeto é uma instância de uma classe.
+- `issubclass(class, classinfo)`: Verifica se uma classe é subclasse de outra.
+- `iter(iterable[, sentinel])`: Retorna um iterador para o iterável.
+- `len(s)`: Retorna o número de elementos em uma sequência (string, lista, tupla, etc.).
+- `list([iterable])`: Retorna uma lista.
+- `locals()`: Retorna um dicionário com as variáveis locais.
+- `map(function, iterable, ...)`: Aplica uma função a cada elemento do iterável.
+- `max(iterable[, key])`: Retorna o maior elemento do iterável.
+- `memoryview(obj)`: Retorna uma visão de memória de um objeto.
+- `min(iterable[, key])`: Retorna o menor elemento do iterável.
+- `next(iterator[, default])`: Retorna o próximo elemento de um iterador.
+- `object()`: Retorna um novo objeto vazio.
+- `oct(x)`: Converte um número inteiro para uma string octal.
+- `open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)`: Abre um arquivo.
+- `ord(c)`: Retorna o valor Unicode do caractere.
+- `pow(x, y[, z])`: Calcula x elevado à potência y (opcionalmente módulo z).
+- `print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)`: Imprime objetos na saída padrão.
+- `property([fget[, fset[, fdel[, doc]]]])`: Retorna uma propriedade.
+- `range(stop)`, `range(start, stop[, step])`: Retorna uma sequência de valores.
