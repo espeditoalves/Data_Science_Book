@@ -1,7 +1,8 @@
+Indice:
 - [1. O que são Testes de Hipóteses](#1-o-que-são-testes-de-hipóteses)
   - [1.1. Hipóteses](#11-hipóteses)
   - [1.2. Passos para Realizar um Teste de Hipóteses](#12-passos-para-realizar-um-teste-de-hipóteses)
-  - [Tipos de Teste de hipóteses:](#tipos-de-teste-de-hipóteses)
+  - [1.3. Tipos de Teste de hipóteses:](#13-tipos-de-teste-de-hipóteses)
 
 # 1. O que são Testes de Hipóteses
 
@@ -21,6 +22,6 @@ Testes de hipóteses são procedimentos estatísticos usados para tomar decisõe
 5. **Tomar a Decisão**: Comparar a estatística de teste com o valor crítico ou calcular o p-valor e compará-lo com α.
 6. **Conclusão**: Se o p-valor for menor que α, rejeite H<sub>0</sub> em favor de H<sub>a</sub>. Caso contrário, não rejeite H<sub>0</sub>.
 
-## Tipos de Teste de hipóteses:
+## 1.3. Tipos de Teste de hipóteses:
 
 - [Teste t](./Estatística-t.md)

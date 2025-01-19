@@ -2,3 +2,10 @@
 title = "Ciência de Dados"
 authors = ["Espedito Ferreira Alves"]
 description = "Esse livro é para salvar os meus conhecimento e estudos sobre ciência de dados."
+
+
+[output.html]
+mathjax-support = true
+
+[output.html.fold] 
+enable = true

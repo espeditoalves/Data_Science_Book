@@ -1,4 +1,3 @@
-
 # 1. Teste de Hipóteses com Estatística-t
 
 A baixo segue as principais etapas para se conduzir um teste de hipóteses com a Estatística-t
