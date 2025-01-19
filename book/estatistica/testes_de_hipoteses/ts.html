@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>O que são os ts - Ciência de Dados</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Esse livro é para salvar os meus conhecimento e estudos sobre ciência de dados.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Ciência de Dados</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Indice:</p>
+<ul>
+<li><a href="#1-o-que-%C3%A9-estat%C3%ADstica-t-teste-t-e-distribui%C3%A7%C3%A3o-t">1. O que é Estatística t, Teste t e Distribuição t?</a></li>
+<li><a href="#2-pontos-chave">2. Pontos-chave</a></li>
+<li><a href="#3-estat%C3%ADstica-t">3. Estatística t</a></li>
+<li><a href="#4-distribui%C3%A7%C3%A3o-t">4. Distribuição t</a></li>
+<li><a href="#5-teste-t">5. Teste t</a>
+<ul>
+<li><a href="#51-h%C3%A1-tr%C3%AAs-tipos-de-teste-t">5.1. Há três tipos de teste t:</a></li>
+</ul>
+</li>
+<li><a href="#6-premissas-do-teste-t">6. Premissas do Teste t</a></li>
+<li><a href="#7-graus-de-liberdade">7. Graus de Liberdade</a></li>
+<li><a href="#8-estat%C3%ADstica-t-valor-de-p-e-intervalos-de-confian%C3%A7a">8. Estatística t, Valor de p e Intervalos de Confiança</a>
+<ul>
+<li><a href="#81-estat%C3%ADstica-t">8.1. <strong>Estatística t:</strong></a></li>
+<li><a href="#82-valor-de-p">8.2. <strong>Valor de p:</strong></a></li>
+<li><a href="#83-intervalos-de-confian%C3%A7a">8.3. <strong>Intervalos de Confiança:</strong></a></li>
+<li><a href="#84-rela%C3%A7%C3%A3o-integrada">8.4. Relação Integrada:</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="1-o-que-é-estatística-t-teste-t-e-distribuição-t"><a class="header" href="#1-o-que-é-estatística-t-teste-t-e-distribuição-t">1. O que é Estatística t, Teste t e Distribuição t?</a></h2>
+<p>A estatística é a espinha dorsal da análise de dados, e a estatística t, oriunda da distribuição t, é um dos seus pilares fundamentais.</p>
+<p>Essa ferramenta não apenas desempenha um papel vital em testes de hipóteses, particularmente nos testes t, mas também é a chave para entender como e por que certas conclusões são retiradas de conjuntos de dados.</p>
+<p>Dominar a estatística t é mais do que uma mera habilidade acadêmica; é uma necessidade para qualquer um que queira analisar dados com precisão e confiança.</p>
+<hr />
+<h2 id="2-pontos-chave"><a class="header" href="#2-pontos-chave">2. Pontos-chave</a></h2>
+<ul>
+<li>Testes t avaliam diferenças entre médias amostrais.</li>
+<li>A estatística t considera desvio padrão e tamanho da amostra.</li>
+<li>Testes t requerem a verificação de premissas como normalidade.</li>
+<li><strong><code>P-valores baixos sugerem diferenças estatisticamente significativas</code></strong>.</li>
+<li>Erros comuns incluem assumir normalidade e ignorar premissas.</li>
+</ul>
+<hr />
+<h2 id="3-estatística-t"><a class="header" href="#3-estatística-t">3. Estatística t</a></h2>
+<p>A <strong>estatística t</strong>, também conhecida como <strong>valor t</strong> ou <strong>t de Student</strong>, é uma <strong>medida</strong> que nos ajuda a determinar quão grande é a diferença entre as médias de duas amostras, considerando a variabilidade nos dados.</p>
+<p>Em outras palavras, <strong>ela compara a diferença</strong> observada entre as médias das amostras com o que poderíamos esperar por acaso. Se essa diferença for significativamente grande, concluímos que as médias das populações das quais as amostras foram retiradas provavelmente são diferentes.</p>
+<hr />
+<h2 id="4-distribuição-t"><a class="header" href="#4-distribuição-t">4. Distribuição t</a></h2>
+<p>A distribuição t, também conhecida como distribuição de Student, é uma das distribuições de probabilidade mais importantes no campo da estatística, especialmente quando se trata de inferir sobre uma população a partir de uma amostra pequena.</p>
+<p><strong><code>Origem:</code></strong> A distribuição t foi introduzida por William Sealy Gosset sob o pseudônimo “Student” em 1908. Ele estava trabalhando na empresa de cervejaria Guinness e desenvolveu esta distribuição para lidar com problemas estatísticos envolvendo pequenas amostras.</p>
+<p><img src="../../image/Distri_t_normal.png" alt="imagem" /></p>
+<p><strong>Referência:</strong> https://estatisticafacil.org/estatistica-t/</p>
+<hr />
+<h2 id="5-teste-t"><a class="header" href="#5-teste-t">5. Teste t</a></h2>
+<p>O <strong>teste t é um instrumento refinado</strong> de análise que se vale da estatística t para confrontar as médias de dois conjuntos de dados. O que ele busca discernir é a natureza da variação entre esses conjuntos: é uma diferença genuinamente significativa? Ou poderia essa variação ser atribuída simplesmente ao capricho do acaso?</p>
+<h3 id="51-há-três-tipos-de-teste-t"><a class="header" href="#51-há-três-tipos-de-teste-t">5.1. Há três tipos de teste t:</a></h3>
+<blockquote>
+<p><strong><code>Teste t de Uma Amostra:</code></strong> O teste t de uma amostra confronta a média de uma única amostra com uma média populacional já conhecida. Este tipo de teste é frequentemente adotado quando os pesquisadores desejam verificar se a média da amostra diverge de maneira significativa de um valor hipotetizado. Aqui, a estatística t é determinada comparando-se a média da amostra com a média da população, levando em consideração o tamanho da amostra e seu desvio padrão.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Teste t para Amostras Independentes:</code></strong> Este teste, também conhecido como teste t de duas amostras, é aplicado ao se comparar as médias de duas amostras independentes. O principal objetivo é averiguar se existe uma diferença significativa entre as médias das populações das quais as amostras foram extraídas. Para este teste, a estatística t é calculada considerando-se a discrepância entre as médias das amostras, suas variâncias e os respectivos tamanhos das amostras.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Teste t para Amostras Emparelhadas:</code></strong> O teste t para amostras emparelhadas, ou teste t para amostras dependentes, é indicado para comparação das médias de duas amostras relacionadas. Este teste é utilizado quando as observações são feitas em pares, como medições antes e depois de um tratamento, ou sujeitos pareados em designs experimentais. Para este teste, a estatística t é derivada considerando-se as diferenças entre as observações emparelhadas e suas médias, bem como o desvio padrão.</p>
+</blockquote>
+<hr />
+<h2 id="6-premissas-do-teste-t"><a class="header" href="#6-premissas-do-teste-t">6. Premissas do Teste t</a></h2>
+<p>Garantir que as premissas abaixo sejam atendidas permite aplicar os testes t e a estatística t em suas pesquisas e análises de dados, conduzindo a conclusões válidas e confiáveis.</p>
+<blockquote>
+<p><strong><code>Dados em Escala de Intervalo ou Razão:</code></strong> Os testes t são projetados para dados contínuos que podem ser medidos em uma escala de razão ou intervalo. Estes tipos de dados possuem intervalos iguais entre os valores e um ponto zero significativo.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Independência das Observações:</code></strong> As observações nas amostras devem ser independentes entre si. Isso implica que a ocorrência de uma observação não deve influenciar a probabilidade de outra observação acontecer. No teste t para amostras independentes, as amostras devem ser selecionadas de forma aleatória e não relacionadas entre si. Para o teste t de amostras emparelhadas, cada par de observações deve ser independente dos outros pares.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Normalidade:</code></strong> Os dados devem ter uma distribuição aproximadamente normal, especialmente para tamanhos de amostras pequenos. Este pressuposto sugere que a distribuição de amostragem das médias segue uma distribuição normal ou quase normal. Embora os testes t sejam considerados robustos a desvios moderados da normalidade, violações graves podem afetar a precisão dos resultados do teste.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Homogeneidade das Variâncias:</code></strong> No teste t para amostras independentes, as variâncias das duas populações comparadas devem ser iguais ou, pelo menos, aproximadamente iguais. Esse pressuposto é conhecido como homogeneidade das variâncias. Se esse pressuposto for violado, testes alternativos, como o <strong>teste t de Welch</strong>, podem ser empregados, pois este último não exige variâncias iguais.</p>
+</blockquote>
+<hr />
+<h2 id="7-graus-de-liberdade"><a class="header" href="#7-graus-de-liberdade">7. Graus de Liberdade</a></h2>
+<p>Os graus de liberdade representam um conceito fundamental na estatística e têm implicações profundas no cálculo da estatística t e na determinação dos valores críticos em testes t.</p>
+<p><strong>Mas, o que são exatamente os graus de liberdade?</strong> São o número de valores numa análise que têm a liberdade de variar sem infringir qualquer regra estabelecida — em outras palavras, são as observações independentes que podem ser usadas para estimar um parâmetro.</p>
+<blockquote>
+<p>Exemplo:</p>
+<p>Imagine que você tem cinco amigos e está tentando calcular a média das idades deles. Você sabe que a média de suas idades é 25 anos. Se você souber a idade de quatro desses amigos, você poderá facilmente calcular a idade do quinto amigo, mesmo sem ninguém te dizer qual é.</p>
+<p>Por exemplo: Amigo 1: 24 anos; Amigo 2: 25 anos; Amigo 3: 26 anos; e Amigo 4: 23 anos.</p>
+<p>Usando a informação de que a média é 25 anos, podemos calcular a idade do Amigo 5. Se somarmos as idades dos quatro primeiros amigos, obtemos um total de 98 anos. Para que a média das cinco idades seja 25 anos, o total combinado deve ser 125 anos (25 anos x 5 amigos). Isso significa que o Amigo 5 tem 27 anos (125 – 98 = 27).</p>
+<p>Neste exemplo, os graus de liberdade são 4. Isso porque podemos escolher qualquer idade para os primeiros quatro amigos, mas depois que essas idades forem determinadas, a idade do quinto amigo é fixada pela média que conhecemos. Portanto, só temos “liberdade” para variar as idades de 4 dos 5 amigos.</p>
+</blockquote>
+<p>No universo dos testes t, os graus de liberdade determinam a forma específica da distribuição t, essencial para calcular os valores p e tomar decisões estatísticas sobre as diferenças entre grupos.</p>
+<p><strong>Como calculamos os graus de liberdade para diferentes testes t:</strong></p>
+<blockquote>
+<p><strong><code>Teste t de Uma Amostra:</code></strong> Simplesmente subtrai-se um do tamanho total da amostra. Matematicamente falando: gl = n – 1.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Teste t para Amostras Independentes:</code></strong> Neste cenário, temos duas amostras diferentes. A fórmula considera o tamanho de ambas as amostras: gl = n1 + n2 – 2.</p>
+</blockquote>
+<blockquote>
+<p><strong><code>Teste t para Amostras Emparelhadas:</code></strong> Aqui, comparamos dois conjuntos de observações do mesmo grupo, como um “antes e depois”. Os graus de liberdade são calculados subtraindo um do número total de pares: gl = n – 1.</p>
+</blockquote>
+<p>A correta <strong>compreensão</strong> e <strong>aplicação</strong> dos graus de liberdade não apenas asseguram a precisão da sua análise, mas também a confiabilidade das conclusões extraídas dela.</p>
+<hr />
+<h2 id="8-estatística-t-valor-de-p-e-intervalos-de-confiança"><a class="header" href="#8-estatística-t-valor-de-p-e-intervalos-de-confiança">8. Estatística t, Valor de p e Intervalos de Confiança</a></h2>
+<p>Estes três componentes formam a espinha dorsal da inferência estatística, permitindo aos pesquisadores e analistas de dados não apenas identificar diferenças significativas em seus conjuntos de dados, mas também entender o contexto e a relevância dessas diferenças.</p>
+<h3 id="81-estatística-t"><a class="header" href="#81-estatística-t">8.1. <strong>Estatística t:</strong></a></h3>
+<p><strong>Definição:</strong> Originada da distribuição t, a estatística-t quantifica a diferença entre médias amostrais, levando em consideração o desvio padrão e o tamanho da amostra.</p>
+<p><strong>Aplicação:</strong> Usada principalmente em testes t para contrastar médias amostrais, ela serve como um índice para avaliar o quão longe a nossa amostra está da população sob a hipótese nula.</p>
+<h3 id="82-valor-de-p"><a class="header" href="#82-valor-de-p">8.2. <strong>Valor de p:</strong></a></h3>
+<p><strong>Definição:</strong> Uma métrica que indica a probabilidade de observar um resultado, como o obtido (ou mais extremo), assumindo que a hipótese nula (H0) é verdadeira.</p>
+<p><strong>Interpretação:</strong> Um <code>p-valor pequeno</code> — frequentemente, menor que 0.05 — sugere que os dados observados são <code>inconsistentes com a hipótese nula (H0)</code>, permitindo-nos <code>rejeitá-la</code> em favor da hipótese alternativa (H1). Portanto, <code>um p-valor baixo sinaliza uma diferença estatisticamente significativa.</code></p>
+<h3 id="83-intervalos-de-confiança"><a class="header" href="#83-intervalos-de-confiança">8.3. <strong>Intervalos de Confiança:</strong></a></h3>
+<p><strong>Definição:</strong> Uma estimativa de intervalo que indica a faixa dentro da qual esperamos que o verdadeiro valor da população esteja, com uma certa confiança (como 95%).</p>
+<p><strong>Interpretação:</strong> Em testes t, esses intervalos nos oferecem uma faixa de valores prováveis para as diferenças entre as médias populacionais ou a média da população em si. A <strong>amplitude desse intervalo é influenciada por fatores como a estatística-t</strong>, o tamanho da amostra e a variabilidade dos dados.</p>
+<h3 id="84-relação-integrada"><a class="header" href="#84-relação-integrada">8.4. Relação Integrada:</a></h3>
+<blockquote>
+<p>A estatística-t nos fornece uma métrica de diferença que é, então, avaliada em termos de sua probabilidade sob a hipótese nula — daí surge o p-valor.</p>
+</blockquote>
+<blockquote>
+<p>Ao mesmo tempo, a estatística-t alimenta a construção dos intervalos de confiança, proporcionando uma visão mais ampla da diferença, não apenas em termos de significância, mas também de magnitude e relevância prática.</p>
+</blockquote>
+<p>Em suma, ao <strong>combinar</strong> a estatística-t, o p-valor e os intervalos de confiança, obtemos uma imagem completa e multidimensional da diferença observada, auxiliando na tomada de decisões informadas e na interpretação precisa dos resultados.</p>
+<p><strong>Referência:</strong> https://estatisticafacil.org/estatistica-t/</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../estatistica/testes_de_hipoteses/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../estatistica/testes_de_hipoteses/estatistica_t.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../estatistica/testes_de_hipoteses/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../estatistica/testes_de_hipoteses/estatistica_t.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
